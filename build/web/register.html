@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TaskApp</title>
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            form {border: 5px solid #f0f0f0;}
+            h2   {width: 20%;padding-left:45%}
+
+            input[type=text], input[type=password], input[type=email], input[type=number] {
+                width: 400px;
+                padding: 12px 35px;
+                margin: 8px -55px;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+            }
+
+            .imgcontainer{
+                text-align: center;
+                margin: 20px 0 12px 0;
+            }
+
+            image.avatar {
+                width: 15%;
+                border-radius: 50%;
+            }
+
+            .container {
+                width: 20%;
+                padding-left:40%
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+
+            /* Change styles for span and cancel button on extra small screens */
+            @media screen and (max-width: 300px) {
+                span.psw {
+                    display: block;
+                    float: none;
+                }
+                .cancelbtn {
+                    width: 100%;
+                }
+            }
+            div{
+                border-radius: 5px;
+                background-color: #ccffcc;
+                padding: 10px;
+            }
+        </style>
+        <script>
+            var password = document.getElementById("password")
+                    , confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+                if (password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                } else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="POST" action="reg">
+            <div>
+                <h1>Create an Account</h1>
+                <div class="imgcontainer">
+                    <img src="image/pic.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Email here" name="email" required><br>
+
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Username here" name="username" required><br>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Password here" id="password" name="password" required><br>
+
+                    <label for="cpsw"><b>Confirm Password</b></label>
+                    <input type="password" placeholder="Password again" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+
+                    <label for="telephone"><b>Phone No</b></label>
+                    <input type="number" placeholder="Phone No here" name="telephone" required><br>
+                    
+                    <label for="initial_amount"><b>Initial Amount</b></label>
+                    <input type="number" placeholder="Enter the initial amount you wish to deposit" name="initial_amount" required><br>
+                    
+                    <button type="submit">Sign Up</button>
+                    <a href="index.html">Already signed Up?Click to Login</a>
+
+
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
